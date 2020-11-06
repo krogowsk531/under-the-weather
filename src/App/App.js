@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { getLocationWeather } from '../apiFetch.js'
 import Weather from '../Weather/Weather.js'
 import SearchBar from '../SearchBar/SearchBar.js'
+import Comfort from '../Comfort/Comfort.js'
 
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
         <SearchBar />
         <Weather weatherForecast={this.state.weatherForecast}/>
         <button>Keep Me Comfortable!</button>
+        <Comfort />
       </div>
     )
   }
