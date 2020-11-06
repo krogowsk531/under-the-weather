@@ -7,14 +7,17 @@ class SearchBar extends Component {
     this.state = {
       location: '',
     }
+    console.log('props', props)
   }
 
-  updateValue = (event) => {
-    this.setState({location: event.target.value })
-  }
 
   searchWeather = (event) => {
     event.preventDefault()
+    console.log('value', document.getElementById('location-input').value)
+    this.setState({location: document.getElementById('location-input').value })
+    console.log('change', this.state.location)
+    this.props.updateAppLocation(document.getElementById('location-input').value);
+
   }
 
   render() {
@@ -25,8 +28,6 @@ class SearchBar extends Component {
           id="location-input"
           type="search"
           name="search"
-          value={this.state.search}
-          onChange={this.updateValue}
         />
         <button type="submit" onClick={this.searchWeather}>Get Weather!</button>
       </form>

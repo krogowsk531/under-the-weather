@@ -5,6 +5,7 @@ import Weather from '../Weather/Weather.js'
 import SearchBar from '../SearchBar/SearchBar.js'
 import Comfort from '../Comfort/Comfort.js'
 import ComfortForm from '../ComfortForm/ComfortForm.js'
+// import List from '../List/List.js'
 
 
 class App extends Component {
@@ -12,23 +13,32 @@ class App extends Component {
     super()
     this.state = {
       weatherForecast: {},
-      location: 'Denver',
+      location: '',
     }
   }
 
-  componentDidMount = async () => {
-    console.log('here', this.state.location)
-    await getLocationWeather(this.state.location)
+  updateAppLocation = (location) => {
+    console.log("LOC", location)
+    getLocationWeather(location)
     .then(data => {console.log(data);this.setState({weatherForecast: data})})
-    .catch(error => console.log("NOT FETCHING DATA"))
+    .catch(error => console.log("NOT FETCHING HERE"))
+
   }
+
+  // componentDidMount = async () => {
+  //   // console.log('here', this.state.location)
+  //   // await getLocationWeather(this.state.location)
+  //   // .then(data => {console.log(data);this.setState({weatherForecast: data})})
+  //   // .catch(error => console.log("NOT FETCHING DATA"))
+  //   this.updateAppLocation(this.state.location)
+  // }
 
 
   render() {
     return (
       <div className='App'>
         <h1>Under the Weather</h1>
-        <SearchBar />
+        <SearchBar updateAppLocation={this.updateAppLocation}/>
         <Weather weatherForecast={this.state.weatherForecast}/>
         <button>Keep Me Comfortable!</button>
         <Comfort />
