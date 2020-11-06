@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react'
 import { getLocationWeather } from '../apiFetch.js'
+import Weather from '../Weather/Weather.js'
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>Under the Weather</h1>
+        <Weather weatherForecast={this.state.weatherForecast}/>
       </div>
     )
   }
