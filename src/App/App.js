@@ -4,6 +4,7 @@ import { getLocationWeather } from '../apiFetch.js'
 import Weather from '../Weather/Weather.js'
 import SearchBar from '../SearchBar/SearchBar.js'
 import Comfort from '../Comfort/Comfort.js'
+import ComfortForm from '../ComfortForm/ComfortForm.js'
 
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
         <Weather weatherForecast={this.state.weatherForecast}/>
         <button>Keep Me Comfortable!</button>
         <Comfort />
+        <ComfortForm />
       </div>
     )
   }
