@@ -9,11 +9,12 @@ class App extends Component {
     super()
     this.state = {
       weatherForecast: {},
-      location: ''
+      location: 'Denver'
     }
   }
 
   componentDidMount = async () => {
+    console.log('here', this.state.location)
     await getLocationWeather(this.state.location)
     .then(data => this.setState({weatherForecast: data}))
     .catch(error => console.log("NOT FETCHING DATA"))
