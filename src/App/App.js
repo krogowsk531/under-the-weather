@@ -1,0 +1,11 @@
+import logo from './logo.svg';
+import './App.css';
+
+
+class App extends Component {
+  constructor() {
+    super()
+  }
+}
+
+export default App;
