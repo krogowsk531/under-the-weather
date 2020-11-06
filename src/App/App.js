@@ -10,16 +10,17 @@ class App extends Component {
     super()
     this.state = {
       weatherForecast: {},
-      location: 'Denver'
+      location: 'Denver',
     }
   }
 
   componentDidMount = async () => {
     console.log('here', this.state.location)
     await getLocationWeather(this.state.location)
-    .then(data => this.setState({weatherForecast: data}))
+    .then(data => {console.log(data);this.setState({weatherForecast: data})})
     .catch(error => console.log("NOT FETCHING DATA"))
   }
+
 
   render() {
     return (
@@ -27,6 +28,7 @@ class App extends Component {
         <h1>Under the Weather</h1>
         <SearchBar />
         <Weather weatherForecast={this.state.weatherForecast}/>
+        <button>Keep Me Comfortable!</button>
       </div>
     )
   }

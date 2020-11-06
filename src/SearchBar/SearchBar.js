@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
+import { getLocationWeather } from '../apiFetch.js'
 
 class SearchBar extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       location: '',
     }
   }
 
   updateValue = (event) => {
-    this.setState({ [event.target.name]: event.target.value })
+    this.setState({location: event.target.value })
   }
 
-  getWeather = (event) => {
+  searchWeather = (event) => {
     event.preventDefault()
-    const city = document.getElementById('location-input').value
   }
 
   render() {
@@ -23,12 +23,12 @@ class SearchBar extends Component {
         <label>Location: </label>
         <input
           id="location-input"
-          type="text"
-          name="location"
-          value={this.state.location}
+          type="search"
+          name="search"
+          value={this.state.search}
           onChange={this.updateValue}
         />
-        <button type="submit" onClick={this.getWeather}>Get Weather!</button>
+        <button type="submit" onClick={this.searchWeather}>Get Weather!</button>
       </form>
     )
   }
