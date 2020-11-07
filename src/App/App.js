@@ -5,7 +5,7 @@ import Weather from '../Weather/Weather.js'
 import SearchBar from '../SearchBar/SearchBar.js'
 import Comfort from '../Comfort/Comfort.js'
 import ComfortForm from '../ComfortForm/ComfortForm.js'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 // import List from '../List/List.js'
 
 
@@ -46,8 +46,10 @@ class App extends Component {
           <Weather weatherForecast={this.state.weatherForecast}/>
           <button>Keep Me Comfortable!</button>
         </Route>
-        <Comfort />
-        <ComfortForm />
+        <Route exact path='/comfort'>
+          <Comfort />
+          <ComfortForm />
+        </Route>
       </div>
     )
   }

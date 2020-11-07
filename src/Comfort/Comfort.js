@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react'
 
-const CLOTHING_ITEMS = localStorage.getItem('clothing')
-  ? JSON.parse(localStorage.getItem('clothing'))
-  : []
+const ALL_CLOTHING = [
+  { id: 1, item: 'Scarf', degrees: 20 },
+  { id: 2, item: 'Sweater', degrees: 30 },
+  { id: 3, item: 'Jacket', degrees: 40 }
+]
+
+// const CLOTHING_ITEMS = localStorage.getItem('clothing')
+//   ? JSON.parse(localStorage.getItem('clothing'))
+//   : []
 
 const Comfort = () => {
-  const [clothing, setClothing] = useState(CLOTHING_ITEMS)
+  const [clothing, setClothing] = useState(ALL_CLOTHING)
   const [temp, setTemp] = useState('')
   const [item, setItem] = useState('')
 
@@ -45,7 +51,7 @@ const Comfort = () => {
     <div>
       <p>Total Temp:{' '}
       {clothing.reduce((acc, curr) => {
-        return (acc += parseInt(curr.item))
+        return (acc += parseInt(curr.degrees))
       }, 0)}
       </p>
     </div>
