@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import ComfortForm from '../ComfortForm/ComfortForm.js'
 import List from '../List/List.js'
 
@@ -8,9 +8,6 @@ const ALL_CLOTHING = [
   { id: 3, item: 'Jacket', degrees: 40 }
 ]
 
-// const CLOTHING_ITEMS = localStorage.getItem('clothing')
-//   ? JSON.parse(localStorage.getItem('clothing'))
-//   : []
 
 const Comfort = () => {
   const [clothing, setClothing] = useState(ALL_CLOTHING)
@@ -29,23 +26,16 @@ const Comfort = () => {
 
 
   const handleComfortForm = event => {
+    console.log('here')
     event.preventDefault()
-    // if (temp !== '' && item !== '') {
-    //   const clothes = { temp, item}
-    //   setClothing([...clothing, clothes])
-    //   setTemp('')
-    //   setItem('')
-    // } else {
-    //   console.log('Invalid temp or item')
-    // }
-  }
-
-  useEffect(() => {
-    localStorage.setItem('clothing', JSON.stringify(clothing))
-  }, [clothing])
-
-  const handleClearItems = () => {
-    setClothing([])
+    if (item !== '' && degrees > 0) {
+      const clothes = { item, degrees }
+      setClothing([...clothing, clothes])
+      setItem('')
+      setDegrees('')
+    } else {
+      console.log('Invalid item or degree amount')
+    }
   }
 
   return (

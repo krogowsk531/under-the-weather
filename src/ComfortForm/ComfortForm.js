@@ -1,7 +1,6 @@
 import React from 'react'
 
-const ComfortForm = ({ item, degrees, handleItem, handleTemp, handleComfortForm }) => {
-  return (
+const ComfortForm = ({ item, degrees, handleItem, handleTemp, handleComfortForm }) => (
     <form>
       <label>Clothing item: </label>
       <input
@@ -21,9 +20,9 @@ const ComfortForm = ({ item, degrees, handleItem, handleTemp, handleComfortForm 
         value={degrees}
         onChange={handleTemp}
       />
-      <button type='submit'>Add</button>
+      <button type='submit' onClick={handleComfortForm}>Add</button>
     </form>
   )
-}
+
 
 export default ComfortForm;
