@@ -6,7 +6,7 @@ import SearchBar from '../SearchBar/SearchBar.js'
 import Comfort from '../Comfort/Comfort.js'
 import ComfortForm from '../ComfortForm/ComfortForm.js'
 import { Route, Link } from 'react-router-dom'
-// import List from '../List/List.js'
+import List from '../List/List.js'
 
 
 
@@ -48,7 +48,6 @@ class App extends Component {
         </Route>
         <Route exact path='/comfort'>
           <Comfort />
-          <ComfortForm />
         </Route>
       </div>
     )

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import ComfortForm from '../ComfortForm/ComfortForm.js'
+import List from '../List/List.js'
 
 const ALL_CLOTHING = [
   { id: 1, item: 'Scarf', degrees: 20 },
@@ -55,6 +57,8 @@ const Comfort = () => {
       }, 0)}
       </p>
     </div>
+    <ComfortForm />
+    <List clothing={clothing}/>
     </section>
   )
 }
