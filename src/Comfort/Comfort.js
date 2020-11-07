@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ComfortForm from '../ComfortForm/ComfortForm.js'
 import List from '../List/List.js'
 
-const ALL_CLOTHING = [
-  { id: 1, item: 'Scarf', degrees: 20 },
-  { id: 2, item: 'Sweater', degrees: 30 },
-  { id: 3, item: 'Jacket', degrees: 40 }
-]
+// const ALL_CLOTHING = [
+//   { id: 1, item: 'Scarf', degrees: 20 },
+//   { id: 2, item: 'Sweater', degrees: 30 },
+//   { id: 3, item: 'Jacket', degrees: 40 }
+// ]
+
+const ALL_CLOTHING = localStorage.getItem('clothing')
+  ? JSON.parse(localStorage.getItem('clothing'))
+  : []
 
 
 const Comfort = () => {
@@ -38,6 +42,14 @@ const Comfort = () => {
     }
   }
 
+  useEffect(() => {
+  localStorage.setItem('clothing', JSON.stringify(clothing))
+  }, [clothing])
+
+  const handleClearItem = () => {
+  setClothing([])
+  }
+
   return (
     <section>
     <h3>Keep me Comfortable</h3>
@@ -54,6 +66,7 @@ const Comfort = () => {
       handleItem={handleItem}
       handleTemp={handleTemp}
       handleComfortForm={handleComfortForm}
+      handleClearItem={handleClearItem}
     />
     <List clothing={clothing}/>
     </section>
