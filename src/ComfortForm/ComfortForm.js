@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ComfortForm = ( {temp, item, handleTemp, handleItems, handleComfortForm, handleClearItems} ) => {
+const ComfortForm = ({ item, degrees, handleItem, handleTemp, handleComfortForm }) => {
   return (
     <form>
       <label>Clothing item: </label>
@@ -9,6 +9,8 @@ const ComfortForm = ( {temp, item, handleTemp, handleItems, handleComfortForm, h
         name='item'
         id='itemName'
         placeholder='Name of clothing item'
+        value={item}
+        onChange={handleItem}
       />
       <label>Degrees Added: </label>
       <input
@@ -16,6 +18,8 @@ const ComfortForm = ( {temp, item, handleTemp, handleItems, handleComfortForm, h
         name='degrees'
         id='degreeValue'
         placeholder='0'
+        value={degrees}
+        onChange={handleTemp}
       />
       <button type='submit'>Add</button>
     </form>

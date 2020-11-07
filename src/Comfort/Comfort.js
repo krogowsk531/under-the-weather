@@ -14,29 +14,30 @@ const ALL_CLOTHING = [
 
 const Comfort = () => {
   const [clothing, setClothing] = useState(ALL_CLOTHING)
-  const [temp, setTemp] = useState('')
   const [item, setItem] = useState('')
+  const [degrees, setDegrees] = useState('')
 
-  const handleTemp = event => {
-    console.log('temp', event.target.value)
-    setTemp(event.target.value)
-  }
-
-  const handleItems = event => {
+  const handleItem = event => {
     console.log('item', event.target.value)
     setItem(event.target.value)
   }
 
+  const handleTemp = event => {
+    console.log('degrees', event.target.value)
+    setDegrees(event.target.value)
+  }
+
+
   const handleComfortForm = event => {
     event.preventDefault()
-    if (temp !== '' && item !== '') {
-      const clothes = { temp, item}
-      setClothing([...clothing, clothes])
-      setTemp('')
-      setItem('')
-    } else {
-      console.log('Invalid temp or item')
-    }
+    // if (temp !== '' && item !== '') {
+    //   const clothes = { temp, item}
+    //   setClothing([...clothing, clothes])
+    //   setTemp('')
+    //   setItem('')
+    // } else {
+    //   console.log('Invalid temp or item')
+    // }
   }
 
   useEffect(() => {
@@ -57,7 +58,13 @@ const Comfort = () => {
       }, 0)}
       </p>
     </div>
-    <ComfortForm />
+    <ComfortForm
+      item={item}
+      degrees={degrees}
+      handleItem={handleItem}
+      handleTemp={handleTemp}
+      handleComfortForm={handleComfortForm}
+    />
     <List clothing={clothing}/>
     </section>
   )
