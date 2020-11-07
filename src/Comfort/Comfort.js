@@ -15,15 +15,21 @@ const ALL_CLOTHING = localStorage.getItem('clothing')
 
 const Comfort = () => {
   const [clothing, setClothing] = useState(ALL_CLOTHING)
+  // const [temp, setTemp] = useState('')
   const [item, setItem] = useState('')
   const [degrees, setDegrees] = useState('')
+
+  // const handleTemp = event => {
+  //   console.log('temp', event.target.value)
+  //   setTemp(event.target.value)
+  // }
 
   const handleItem = event => {
     console.log('item', event.target.value)
     setItem(event.target.value)
   }
 
-  const handleTemp = event => {
+  const handleDegrees = event => {
     console.log('degrees', event.target.value)
     setDegrees(event.target.value)
   }
@@ -35,6 +41,7 @@ const Comfort = () => {
     if (item !== '' && degrees > 0) {
       const clothes = { item, degrees }
       setClothing([...clothing, clothes])
+      // setTemp('')
       setItem('')
       setDegrees('')
     } else {
@@ -53,6 +60,7 @@ const Comfort = () => {
   return (
     <section>
     <h3>Keep me Comfortable</h3>
+    <h4>My Desired Temp:</h4>
     <div>
       <p>Total Temp:{' '}
       {clothing.reduce((acc, curr) => {
@@ -64,7 +72,7 @@ const Comfort = () => {
       item={item}
       degrees={degrees}
       handleItem={handleItem}
-      handleTemp={handleTemp}
+      handleTemp={handleDegrees}
       handleComfortForm={handleComfortForm}
       handleClearItem={handleClearItem}
     />
