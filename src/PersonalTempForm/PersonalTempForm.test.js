@@ -11,7 +11,3 @@ describe('PersonalTempForm', () => {
     expect(screen.getByRole('button', {name: 'Submit'})).toBeInTheDocument();
   })
 })
-
-// comfortTemp={comfortTemp}
-// handleMyDegrees={handleMyDegrees}
-// handleSubmitDegrees={handleSubmitDegrees}

@@ -20,8 +20,8 @@ const ComfortForm = ({ item, degrees, handleItem, handleTemp, handleComfortForm,
         value={degrees}
         onChange={handleTemp}
       />
-      <button type='submit' onClick={handleComfortForm}>Add</button>{' '}
-      <button type='submit' onClick={handleClearItem}>Delete</button>
+      <button className='button' type='submit' onClick={handleComfortForm}>Add</button>{' '}
+      <button className='button' type='submit' onClick={handleClearItem}>Delete</button>
     </form>
   )
 
