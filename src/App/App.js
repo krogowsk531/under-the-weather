@@ -7,6 +7,7 @@ import Comfort from '../Comfort/Comfort.js'
 import ComfortForm from '../ComfortForm/ComfortForm.js'
 import { Route, Link } from 'react-router-dom'
 import List from '../List/List.js'
+import PersonalTemp from '../PersonalTemp/PersonalTemp.js'
 
 
 
@@ -47,6 +48,7 @@ class App extends Component {
           <button>Keep Me Comfortable!</button>
         </Route>
         <Route exact path='/comfort'>
+          <PersonalTemp />
           <Comfort />
         </Route>
       </div>

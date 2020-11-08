@@ -2,27 +2,14 @@ import React, { useState, useEffect } from 'react'
 import ComfortForm from '../ComfortForm/ComfortForm.js'
 import List from '../List/List.js'
 
-// const ALL_CLOTHING = [
-//   { id: 1, item: 'Scarf', degrees: 20 },
-//   { id: 2, item: 'Sweater', degrees: 30 },
-//   { id: 3, item: 'Jacket', degrees: 40 }
-// ]
-
 const ALL_CLOTHING = localStorage.getItem('clothing')
   ? JSON.parse(localStorage.getItem('clothing'))
   : []
 
-
 const Comfort = () => {
   const [clothing, setClothing] = useState(ALL_CLOTHING)
-  // const [temp, setTemp] = useState('')
   const [item, setItem] = useState('')
   const [degrees, setDegrees] = useState('')
-
-  // const handleTemp = event => {
-  //   console.log('temp', event.target.value)
-  //   setTemp(event.target.value)
-  // }
 
   const handleItem = event => {
     console.log('item', event.target.value)
@@ -34,14 +21,12 @@ const Comfort = () => {
     setDegrees(event.target.value)
   }
 
-
   const handleComfortForm = event => {
     console.log('here')
     event.preventDefault()
     if (item !== '' && degrees > 0) {
       const clothes = { item, degrees }
       setClothing([...clothing, clothes])
-      // setTemp('')
       setItem('')
       setDegrees('')
     } else {
@@ -59,8 +44,7 @@ const Comfort = () => {
 
   return (
     <section>
-    <h3>Keep me Comfortable</h3>
-    <h4>My Desired Temp:</h4>
+    <h4>Get me to my desired temp!</h4>
     <div>
       <p>Total Temp:{' '}
       {clothing.reduce((acc, curr) => {

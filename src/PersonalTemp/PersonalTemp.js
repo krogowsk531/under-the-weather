@@ -1,15 +1,41 @@
 import React, { useState, useEffect } from 'react'
+import PersonalTempForm from '../PersonalTempForm/PersonalTempForm.js'
+import DisplayTemp from '../DisplayTemp/DisplayTemp.js'
 
-const IDEAL_TEMP = [
-  { id: 1, myDegrees: 70 },
-]
+const IDEAL_TEMP = localStorage.getItem('comfortTemp')
+  ? JSON.parse(localStorage.getItem('comfortTemp'))
+  : []
 
 const PersonalTemp = () => {
   const [comfortTemp, setComfortTemp] = useState(IDEAL_TEMP)
-  // const [myDegrees, setMyDegrees] = useState('')
+  const [displayComfortLevel, setDisplayComfortLevel] = useState(IDEAL_TEMP)
+
+  const handleMyDegrees = event => {
+    console.log('myDegrees', event.target.value)
+    setComfortTemp(event.target.value)
+  }
+
+  const handleSubmitDegrees = event => {
+    event.preventDefault()
+    setDisplayComfortLevel(comfortTemp)
+    if (comfortTemp > 0) {
+      localStorage.setItem('comfortTemp', comfortTemp)
+    } else {
+      console.log('Invalid degrees')
+    }
+  }
 
   return (
-    <h2>My Comfort Level: </h2>
+    <section>
+    <h3>Keep me Comfortable</h3>
+    <h2>My Comfort Level: {displayComfortLevel}</h2>
+
+    <PersonalTempForm
+      comfortTemp={comfortTemp}
+      handleMyDegrees={handleMyDegrees}
+      handleSubmitDegrees={handleSubmitDegrees}
+      />
+    </section>
   )
 }
 
