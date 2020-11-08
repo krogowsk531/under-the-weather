@@ -11,7 +11,7 @@ const PersonalTempForm = ({ comfortTemp, handleMyDegrees, handleSubmitDegrees })
       value={comfortTemp}
       onChange={handleMyDegrees}
     />
-  <button type='submit' onClick={handleSubmitDegrees}>Submit</button>
+  <button type='submit' className='button' onClick={handleSubmitDegrees}>Submit</button>
   </form>
 )
 

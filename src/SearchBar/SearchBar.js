@@ -7,7 +7,7 @@ class SearchBar extends Component {
     this.state = {
       location: '',
     }
-    console.log('props', props)
+    
   }
 
 
