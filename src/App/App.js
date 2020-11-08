@@ -8,6 +8,7 @@ import ComfortForm from '../ComfortForm/ComfortForm.js'
 import { Route, Link } from 'react-router-dom'
 import List from '../List/List.js'
 import PersonalTemp from '../PersonalTemp/PersonalTemp.js'
+import Table from '../Table/Table.js'
 
 
 
@@ -49,6 +50,7 @@ class App extends Component {
         </Route>
         <Route exact path='/comfort'>
           <PersonalTemp />
+          <Table />
           <Comfort />
         </Route>
       </div>

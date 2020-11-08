@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import PersonalTempForm from '../PersonalTempForm/PersonalTempForm.js'
-import DisplayTemp from '../DisplayTemp/DisplayTemp.js'
 
 const IDEAL_TEMP = localStorage.getItem('comfortTemp')
   ? JSON.parse(localStorage.getItem('comfortTemp'))

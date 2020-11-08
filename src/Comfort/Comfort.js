@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ComfortForm from '../ComfortForm/ComfortForm.js'
 import List from '../List/List.js'
 
+
 const ALL_CLOTHING = localStorage.getItem('clothing')
   ? JSON.parse(localStorage.getItem('clothing'))
   : []
