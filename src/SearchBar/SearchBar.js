@@ -29,7 +29,7 @@ class SearchBar extends Component {
           type="search"
           name="search"
         />
-        <button type="submit" onClick={this.searchWeather}>Get Weather!</button>
+        <button className='button' type="submit" onClick={this.searchWeather}>Get Weather!</button>
       </form>
     )
   }
