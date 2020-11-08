@@ -1,30 +1,29 @@
 import React from 'react'
 
-const ComfortForm = ( {temp, item, handleTemp, handleItems, handleComfortForm, handleClearItems} ) => {
-  return (
+const ComfortForm = ({ item, degrees, handleItem, handleTemp, handleComfortForm, handleClearItem }) => (
     <form>
-      <label>Name of clothing item</label>
+      <label>Clothing item: </label>
       <input
         type='text'
         name='item'
         id='itemName'
         placeholder='Name of clothing item'
         value={item}
-        onChange={handleItems}
+        onChange={handleItem}
       />
-      <label>Degrees Added</label>
+      <label>Degrees Added: </label>
       <input
         type='number'
-        name='temp'
-        id='tempValue'
-        placeholder='Amount of comfort degrees'
-        value={temp}
+        name='degrees'
+        id='degreeValue'
+        placeholder='0'
+        value={degrees}
         onChange={handleTemp}
       />
-      <button type='submit'>Add</button>{' '}
-      <button type='submit' onClick={handleClearItems}>Delete</button>
+      <button type='submit' onClick={handleComfortForm}>Add</button>{' '}
+      <button type='submit' onClick={handleClearItem}>Delete</button>
     </form>
   )
-}
+
 
 export default ComfortForm;

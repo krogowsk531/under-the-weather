@@ -1,12 +1,16 @@
 import React from 'react'
 
-// const List = ({ clothing }) => (
-//   <div>
-//     {clothing.map(listItem => (
-//       {listItem.item} - {listItem.temp}
-//     ))}
-//   </div>
-// )
+const List = ({ clothing }) => (
+  <div>
+    <section>
+    {clothing.map(listItem => (
+      <li key={listItem.id}>
+      {listItem.item} - {listItem.degrees}°
+      </li>
+    ))}
+    </section>
+  </div>
+)
 
 
-// export default List;
+export default List;
