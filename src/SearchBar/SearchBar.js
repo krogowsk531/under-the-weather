@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { getLocationWeather } from '../apiFetch.js'
+import './SearchBar.css';
+
 
 class SearchBar extends Component {
   constructor(props) {
@@ -7,7 +9,7 @@ class SearchBar extends Component {
     this.state = {
       location: '',
     }
-    
+
   }
 
 
@@ -22,8 +24,8 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <form>
-        <label>Location: </label>
+      <form className='location-form'>
+        <label className='location-label'>Location: </label>
         <input
           id="location-input"
           type="search"

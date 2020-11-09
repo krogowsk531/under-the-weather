@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-image: url('https://unsplash.com/photos/CNuhMkVBtSA');
+  /* background-image: url('../public/filip-mroz-fOTzSurlHhA-unsplash.jpg'); */
 }
 
 .App-logo {
@@ -16,13 +16,13 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 40px;
   color: white;
+  padding-top: 20px;
 }
 
 .App-link {

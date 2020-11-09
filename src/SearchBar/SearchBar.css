@@ -1,0 +1,38 @@
+#location-input {
+  outline: none;
+  background-color: silver;
+  padding: 5px 35px;
+}
+
+.location-form {
+  color: #FFFFFF;
+  display: inline-grid;
+  justify-content: center;
+  border: 4px solid silver;
+  background: #282c34;
+  border-radius: 4px;
+  align-items: center;
+  height: 150px;
+  margin-top: 45px;
+  position: relative;
+  width: 55%;
+  z-index: 2;
+  flex-flow: row wrap;
+  padding-bottom: 30px;
+}
+
+.location-label {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.button {
+  background-color: silver;
+  border: none;
+  color: black;
+  padding: 5px 35px;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}

@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Route exact path='/'>
-          <h1>Under the Weather</h1>
+          <h1 className='App-header'>Under the Weather</h1>
           <SearchBar updateAppLocation={this.updateAppLocation}/>
           <Weather weatherForecast={this.state.weatherForecast}/>
         </Route>
