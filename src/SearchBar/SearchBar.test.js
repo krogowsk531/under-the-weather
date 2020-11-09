@@ -7,30 +7,33 @@ import userEvent from '@testing-library/user-event'
 
 describe('SearchBar', () => {
   it('should have one input field and a button', () => {
-    render (<SearchBar updateAppLocation/>)
+    render (<SearchBar />)
 
     expect(screen.getByText('Location:')).toBeInTheDocument();
     expect(screen.getByRole('button', {name: 'Get Weather!'})).toBeInTheDocument();
   })
 
-  it('should invoke searchWeather when button is clicked', () => {
-    const fakeSearchWeather = jest.fn();
-    render(<SearchBar updateAppLocation/>)
+  it('when get weather is clicked updateAppLocation is called', () => {
+    const mockUpdate = jest.fn()
+    render (<SearchBar updateAppLocation={mockUpdate}/>)
 
-    userEvent.click(screen.getByText('Get Weather!'));
-    expect(fakeSearchWeather).toHaveBeenCalledTimes(1)
+
+    userEvent.click(screen.getByText('Get Weather!'))
+    expect(mockUpdate).toHaveBeenCalledTimes(1)
   })
-})
 
-// it('should invoke removeIdea with the card id when button is clicked', () => {
-//     const fakeRemoveIdea = jest.fn();
-//     render(<Card
-//                 id={101}
-//                 title="Flavor"
-//                 description="Check if this is soda"
-//                 removeIdea={fakeRemoveIdea}
-//               />)
-//     userEvent.click(screen.getByText('Delete'));
-//     expect(fakeRemoveIdea).toHaveBeenCalledTimes(1);
-//     expect(fakeRemoveIdea).toHaveBeenCalledWith(101)
-//   })
+//   it('when submit is clicked loginHandler is called', () => {
+//   const mockSet = jest.fn();
+//   const aUser = {}
+//   Login.loginHandler = jest.fn();
+//   render(
+//
+//       <Login
+//     setUser={mockSet}
+//     userId={aUser}/>
+//
+// )
+//   userEvent.click(screen.getByText('Submit'))
+//   expect(Login.loginHandler).toHaveBeenCalledTimes(1)
+// })
+})
