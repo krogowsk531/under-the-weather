@@ -1,5 +1,7 @@
 import React from 'react'
 import './PersonalTempForm.css';
+import PropTypes from 'prop-types';
+
 
 const PersonalTempForm = ({ comfortTemp, handleMyDegrees, handleSubmitDegrees }) => (
   <form className='personal-form'>
@@ -17,3 +19,9 @@ const PersonalTempForm = ({ comfortTemp, handleMyDegrees, handleSubmitDegrees })
 )
 
 export default PersonalTempForm;
+
+PersonalTempForm.propTypes = {
+  comfortTemp: PropTypes.number,
+  handleMyDegrees: PropTypes.func.isRequired,
+  handleSubmitDegrees: PropTypes.func.isRequired,
+}

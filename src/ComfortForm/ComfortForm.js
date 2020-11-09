@@ -1,5 +1,6 @@
 import React from 'react'
 import './ComfortForm.css';
+import PropTypes from 'prop-types';
 
 const ComfortForm = ({ item, degrees, handleItem, handleTemp, handleComfortForm, handleClearItem }) => (
     <form className='degrees-form'>
@@ -28,3 +29,12 @@ const ComfortForm = ({ item, degrees, handleItem, handleTemp, handleComfortForm,
 
 
 export default ComfortForm;
+
+ComfortForm.propTypes = {
+  degrees: PropTypes.string,
+  handleClearItem: PropTypes.func.isRequired,
+  handleComfortForm: PropTypes.func.isRequired,
+  handleItem: PropTypes.func.isRequired,
+  handleTemp: PropTypes.func.isRequired,
+  item: PropTypes.string
+}

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import WeatherCard from '../WeatherCard/WeatherCard.js'
 import { useHistory } from 'react-router-dom'
 import './Weather.css';
+import PropTypes from 'prop-types';
+
 
 
 const Weather = ( {weatherForecast} ) => {
@@ -32,6 +34,10 @@ const Weather = ( {weatherForecast} ) => {
 }
 
 export default Weather;
+
+Weather.propTypes = {
+  weatherForecast: PropTypes.object,
+}
 
 
 // class Weather extends Component {

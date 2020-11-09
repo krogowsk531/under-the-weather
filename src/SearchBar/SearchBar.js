@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { getLocationWeather } from '../apiFetch.js'
 import './SearchBar.css';
+import PropTypes from 'prop-types';
+
 
 
 class SearchBar extends Component {
@@ -25,11 +27,12 @@ class SearchBar extends Component {
   render() {
     return (
       <form className='location-form'>
-        <label className='location-label'>Location: </label>
+        <label className='location-label' >Location: </label>
         <input
           id="location-input"
           type="search"
           name="search"
+          placeholder='City Name'
         />
         <button className='button' type="submit" onClick={this.searchWeather}>Get Weather!</button>
       </form>
@@ -38,3 +41,7 @@ class SearchBar extends Component {
 }
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  updateAppLocation: PropTypes.func.isRequired,
+}
