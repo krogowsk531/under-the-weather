@@ -16,7 +16,7 @@ class App extends Component {
     super()
     this.state = {
       weatherForecast: {},
-      location: '',
+      location: 'Denver',
     }
   }
 
@@ -29,13 +29,13 @@ class App extends Component {
   }
 
 
-  // componentDidMount = async () => {
-  //   // console.log('here', this.state.location)
-  //   // await getLocationWeather(this.state.location)
-  //   // .then(data => {console.log(data);this.setState({weatherForecast: data})})
-  //   // .catch(error => console.log("NOT FETCHING DATA"))
-  //   this.updateAppLocation(this.state.location)
-  // }
+  componentDidMount = async () => {
+    console.log('here', this.state.location)
+    await getLocationWeather(this.state.location)
+    .then(data => {console.log(data);this.setState({weatherForecast: data})})
+    .catch(error => console.log("NOT FETCHING DATA"))
+    this.updateAppLocation(this.state.location)
+  }
 
 
   render() {
