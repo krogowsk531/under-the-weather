@@ -28,6 +28,7 @@ class App extends Component {
 
   }
 
+
   // componentDidMount = async () => {
   //   // console.log('here', this.state.location)
   //   // await getLocationWeather(this.state.location)
@@ -44,7 +45,6 @@ class App extends Component {
           <h1>Under the Weather</h1>
           <SearchBar updateAppLocation={this.updateAppLocation}/>
           <Weather weatherForecast={this.state.weatherForecast}/>
-          <button>Keep Me Comfortable!</button>
         </Route>
         <Route exact path='/comfort'>
           <PersonalTemp />

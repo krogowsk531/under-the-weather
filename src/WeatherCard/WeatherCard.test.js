@@ -15,5 +15,3 @@ describe('WeatherCard', () => {
     expect(screen.getByText('FEW CLOUDS')).toBeInTheDocument()
   })
 })
-
-  //locationName, weatherDescription, currentTemp
