@@ -26,8 +26,8 @@ const PersonalTemp = () => {
 
   return (
     <section>
-    <h3>Keep me Comfortable</h3>
-    <h2>My Comfort Level: {displayComfortLevel}</h2>
+    <h1>Keep me Comfortable</h1>
+    <h2>My Comfort Level: {displayComfortLevel}°</h2>
 
     <PersonalTempForm
       comfortTemp={comfortTemp}

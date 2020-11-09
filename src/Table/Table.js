@@ -42,7 +42,7 @@ class Table extends Component {
   render() {
     return (
       <div>
-        <h1 id='title'>Clothing Table</h1>
+        <h3 id='title'>Clothing Table</h3>
         <table id='students'>
           <tbody>
             <tr>{this.renderHeader()}</tr>

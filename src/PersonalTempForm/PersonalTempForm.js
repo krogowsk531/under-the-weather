@@ -1,8 +1,9 @@
 import React from 'react'
+import './PersonalTempForm.css';
 
 const PersonalTempForm = ({ comfortTemp, handleMyDegrees, handleSubmitDegrees }) => (
-  <form>
-  <label>Desired Temp: </label>
+  <form className='personal-form'>
+  <label className='desired-temp'>Desired Temp: </label>
     <input
       type='number'
       name='comfortTemp'

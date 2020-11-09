@@ -1,8 +1,9 @@
 import React from 'react'
+import './ComfortForm.css';
 
 const ComfortForm = ({ item, degrees, handleItem, handleTemp, handleComfortForm, handleClearItem }) => (
-    <form>
-      <label>Clothing item: </label>
+    <form className='degrees-form'>
+      <label className="clothing-label">Clothing item: </label>
       <input
         type='text'
         name='item'
@@ -11,7 +12,7 @@ const ComfortForm = ({ item, degrees, handleItem, handleTemp, handleComfortForm,
         value={item}
         onChange={handleItem}
       />
-      <label>Degrees Added: </label>
+      <label className='degrees-label'>Degrees Added: </label>
       <input
         type='number'
         name='degrees'

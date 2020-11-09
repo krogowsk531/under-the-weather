@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import './List.css';
 
 const List = ({ clothing }) => {
   let history = useHistory();
@@ -12,12 +13,12 @@ const List = ({ clothing }) => {
     <div>
       <section>
       {clothing.map(listItem => (
-        <li key={listItem.id}>
-        {listItem.item} - {listItem.degrees}°
+        <li className="list-item" key={listItem.id}>
+        {listItem.item} + {listItem.degrees}°
         </li>
       ))}
       </section>
-      <button onClick={redirect}>Back to Weather!</button>
+      <button className="back-home" onClick={redirect}>Back to Weather!</button>
     </div>
   )
 }

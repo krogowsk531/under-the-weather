@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ComfortForm from '../ComfortForm/ComfortForm.js'
 import List from '../List/List.js'
+import './Comfort.css';
 
 
 const ALL_CLOTHING = localStorage.getItem('clothing')
@@ -47,7 +48,7 @@ const Comfort = () => {
     <section>
     <h4>Get me to my desired temp!</h4>
     <div>
-      <p>Total Temp:{' '}
+      <p className='total-temp'>Total Temp:{' '}
       {clothing.reduce((acc, curr) => {
         return (acc += parseInt(curr.degrees))
       }, 0)}
