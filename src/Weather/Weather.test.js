@@ -37,12 +37,12 @@ describe('Weather', () => {
     userEvent.click(screen.getByRole('button', {name: 'Keep Me Comfortable!'}))
     expect(fakeHistory.entries[1].pathname).toEqual('/comfort')
   })
+
+  it('should render a city, condition and temperature', () => {
+    const mockWeatherObj = {name: 'Phoenix', weather: [{description: 'sunny'}], main: {temp: 70}}
+    render(<Weather weatherForecast={mockWeatherObj} />)
+
+    expect(screen.getByText('PHOENIX')).toBeInTheDocument();
+    expect(screen.getByText('SUNNY')).toBeInTheDocument();
+  })
 })
-
-  //when keep me comfort is clicked
-  //the url has changed
-  //test Phoenix, sunny and 70 are in the document in different it block
-
-  // locationName={weatherForecast.name}
-  // weatherDescription={weatherForecast.weather[0].description}
-  // currentTemp={weatherForecast.main.temp}
