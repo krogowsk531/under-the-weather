@@ -30,17 +30,3 @@ describe('ComfortForm', () => {
     expect(fakeRemoveClothing).toHaveBeenCalledTimes(1);
   })
 })
-
-
-// it('should invoke removeIdea with the card id when button is clicked', () => {
-//   const fakeRemoveIdea = jest.fn();
-//   render(<Card
-//               id={101}
-//               title="Flavor"
-//               description="Check if this is soda"
-//               removeIdea={fakeRemoveIdea}
-//             />)
-//   userEvent.click(screen.getByText('Delete'));
-//   expect(fakeRemoveIdea).toHaveBeenCalledTimes(1);
-//   expect(fakeRemoveIdea).toHaveBeenCalledWith(101)
-// })

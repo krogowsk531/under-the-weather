@@ -15,7 +15,7 @@ const List = ({ clothing }) => {
       <section>
       {clothing.map(listItem => (
         <li className="list-item" key={listItem.id}>
-        {listItem.item} + {listItem.degrees}°
+          {listItem.item} + {listItem.degrees}°
         </li>
       ))}
       </section>
