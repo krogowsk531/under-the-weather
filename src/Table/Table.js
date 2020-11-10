@@ -43,7 +43,7 @@ class Table extends Component {
     return (
       <div>
         <h3 id='title'>Clothing Table</h3>
-        <table id='students'>
+        <table key='uniqueId' id='students'>
           <tbody>
             <tr>{this.renderHeader()}</tr>
               {this.renderData()}
