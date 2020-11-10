@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { getLocationWeather } from '../apiFetch.js'
 import './SearchBar.css';
 import PropTypes from 'prop-types';
 
