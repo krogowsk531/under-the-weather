@@ -10,7 +10,6 @@ class SearchBar extends Component {
     this.state = {
       location: '',
     }
-
   }
 
 
@@ -20,7 +19,6 @@ class SearchBar extends Component {
     this.setState({location: document.getElementById('location-input').value })
     console.log('change', this.state.location)
     this.props.updateAppLocation(document.getElementById('location-input').value);
-
   }
 
   render() {

@@ -7,7 +7,6 @@ import { createMemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
 
 
-
 describe('List', () => {
 
   it('should go to the home page when back to weather is clicked', () => {

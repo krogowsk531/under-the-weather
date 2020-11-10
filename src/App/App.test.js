@@ -1,5 +1,4 @@
 import App from './App';
-
 import React from 'react'
 import ReactDOM from 'react-dom';
 import '@testing-library/jest-dom';
@@ -50,10 +49,4 @@ describe('App component', () => {
       expect(getWeatherButton).toBeInTheDocument();
       expect(keepMeComfortableButton).toBeInTheDocument();
     })
-
-
-
-
-
-
 })

@@ -10,7 +10,6 @@ const PersonalTemp = () => {
   const [displayComfortLevel, setDisplayComfortLevel] = useState(IDEAL_TEMP)
 
   const handleMyDegrees = event => {
-    console.log('myDegrees', event.target.value)
     setComfortTemp(event.target.value)
   }
 
@@ -28,7 +27,6 @@ const PersonalTemp = () => {
     <section>
     <h1>Keep me Comfortable</h1>
     <h2>My Comfort Level: {displayComfortLevel}°</h2>
-
     <PersonalTempForm
       comfortTemp={comfortTemp}
       handleMyDegrees={handleMyDegrees}

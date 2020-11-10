@@ -9,8 +9,6 @@ import PersonalTemp from '../PersonalTemp/PersonalTemp.js'
 import Table from '../Table/Table.js'
 
 
-
-
 class App extends Component {
   constructor() {
     super()
@@ -21,19 +19,14 @@ class App extends Component {
   }
 
   updateAppLocation = async (location) => {
-    console.log("LOC", location)
     await getLocationWeather(location)
     .then(data => {console.log(data);this.setState({weatherForecast: data})})
     .catch(error => console.log("NOT FETCHING HERE"))
-
   }
-
 
   componentDidMount = async () => {
-    console.log('here', this.state.location)
     this.updateAppLocation(this.state.location)
   }
-
 
   render() {
     return (
