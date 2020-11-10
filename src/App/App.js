@@ -4,13 +4,9 @@ import { getLocationWeather } from '../apiFetch.js'
 import Weather from '../Weather/Weather.js'
 import SearchBar from '../SearchBar/SearchBar.js'
 import Comfort from '../Comfort/Comfort.js'
-import ComfortForm from '../ComfortForm/ComfortForm.js'
-import { Route, Link } from 'react-router-dom'
-import List from '../List/List.js'
+import { Route } from 'react-router-dom'
 import PersonalTemp from '../PersonalTemp/PersonalTemp.js'
 import Table from '../Table/Table.js'
-
-
 
 
 class App extends Component {
@@ -18,35 +14,27 @@ class App extends Component {
     super()
     this.state = {
       weatherForecast: {},
-      location: '',
+      location: 'Denver',
     }
   }
 
-  updateAppLocation = (location) => {
-    console.log("LOC", location)
-    getLocationWeather(location)
+  updateAppLocation = async (location) => {
+    await getLocationWeather(location)
     .then(data => {console.log(data);this.setState({weatherForecast: data})})
     .catch(error => console.log("NOT FETCHING HERE"))
-
   }
 
-  // componentDidMount = async () => {
-  //   // console.log('here', this.state.location)
-  //   // await getLocationWeather(this.state.location)
-  //   // .then(data => {console.log(data);this.setState({weatherForecast: data})})
-  //   // .catch(error => console.log("NOT FETCHING DATA"))
-  //   this.updateAppLocation(this.state.location)
-  // }
-
+  componentDidMount = async () => {
+    this.updateAppLocation(this.state.location)
+  }
 
   render() {
     return (
       <div className='App'>
         <Route exact path='/'>
-          <h1>Under the Weather</h1>
+          <h1 className='App-header'>Under the Weather</h1>
           <SearchBar updateAppLocation={this.updateAppLocation}/>
           <Weather weatherForecast={this.state.weatherForecast}/>
-          <button>Keep Me Comfortable!</button>
         </Route>
         <Route exact path='/comfort'>
           <PersonalTemp />

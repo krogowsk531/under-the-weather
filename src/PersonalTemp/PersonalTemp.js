@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PersonalTempForm from '../PersonalTempForm/PersonalTempForm.js'
 
 const IDEAL_TEMP = localStorage.getItem('comfortTemp')
@@ -10,7 +10,6 @@ const PersonalTemp = () => {
   const [displayComfortLevel, setDisplayComfortLevel] = useState(IDEAL_TEMP)
 
   const handleMyDegrees = event => {
-    console.log('myDegrees', event.target.value)
     setComfortTemp(event.target.value)
   }
 
@@ -26,9 +25,8 @@ const PersonalTemp = () => {
 
   return (
     <section>
-    <h3>Keep me Comfortable</h3>
-    <h2>My Comfort Level: {displayComfortLevel}</h2>
-
+    <h1>Keep me Comfortable</h1>
+    <h2>My Comfort Level: {displayComfortLevel}°</h2>
     <PersonalTempForm
       comfortTemp={comfortTemp}
       handleMyDegrees={handleMyDegrees}

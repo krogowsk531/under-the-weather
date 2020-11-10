@@ -6,10 +6,16 @@ class Table extends Component {
     super(props)
     this.state = {
       clothingItems: [
-        { id: 1, item: 'Scarf', degrees: 20 },
-        { id: 2, item: 'Hat', degrees: 20 },
-        { id: 3, item: 'Sweater', degrees: 40 },
-        { id: 4, item: 'Boots', degrees: 30 }
+        { item: 'Scarf', degrees: 20 },
+        { item: 'Hat', degrees: 20 },
+        { item: 'Sweater', degrees: 40 },
+        { item: 'Boots', degrees: 30 },
+        { item: 'Gloves', degrees: 15 },
+        { item: 'Socks', degrees: 10 },
+        { item: 'Tee', degrees: 15 },
+        { item: 'Jacket', degrees: 50 },
+        { item: 'Jeans', degrees: 25 },
+        { item: 'Ski Pants', degrees: 55 }
       ]
     }
   }
@@ -19,7 +25,6 @@ class Table extends Component {
       const { id, item, degrees } = clothing
       return (
         <tr key={id}>
-          <td>{id}</td>
           <td>{item}</td>
           <td>{degrees}</td>
         </tr>
@@ -37,7 +42,7 @@ class Table extends Component {
   render() {
     return (
       <div>
-        <h1 id='title'>Clothing Table</h1>
+        <h3 id='title'>Clothing Table</h3>
         <table id='students'>
           <tbody>
             <tr>{this.renderHeader()}</tr>
