@@ -56,8 +56,6 @@
 
 ## In Action
 
-## In Action
-
 **Main Weather Page**
 
 ![project page load](https://media.giphy.com/media/16FHreBgxWhGJWiPKY/giphy.gif)
