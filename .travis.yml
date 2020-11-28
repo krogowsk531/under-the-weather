@@ -1,5 +1,9 @@
 language: node_js
 node_js:
-  - "node"
-notifications:
-  email: false
+- node
+deploy:
+  provider: heroku
+  api_key:
+    secure: o/Uqcb1xeSefkLzHik2CcN8J+GDB64A0sat6EH+DpoQ4U2p5r39WoeIBbbqbnolNxxnzAYGr1zBkyh6NgOV2f5AoClsDI4QDJNJ8AqaEyMN7K8gOxqLRHXEbKYZiGZUJOkhxGjHIgCoYwAYiIDy0t87CeIjAg3hmKhVGgx7U+/rvN+J19y03vqVW4UgKA6YFuDsZIRuGQU2o/wpPd0vy0Jp7eW4zmpDSWLTVoLtTTVucNkkTSnQpan6FkKdU10jKFWMCVg+d0qiXYhk6ccl2iLblc2yfYyCXIcG2GbH4NKFkaZOshO7MEgez1y3/5F/KRRjbaheXvZie9NPJc+XnDxAFAB64AfRT6SIHsUAdTKgaU4/YOgGabm+GLIf1kL3t0U2zmKmReM1k/0qE+vjtzq1QXesP6FxIB9/jSxjwCSFXu1e/hXA2Mmz+tk1vKLhtzy6G3Kg2NAnC+PqpXLRP1Nx/L+dMgtc3dJnqNuzcOTjnyoFzDykg6D+ICYSW6QFZeEbgobO0xIPpP5hVfkX9/Zxu8OEze8YCrHyuCFD2SUysAP79bUvHekrND0lFPA448Yx4ztibH9kzbe9yCEsakNrvSpygl5NPef4/a62BkuBzXGYd0WFvcXWL34mZX248mxZGkX71LIy2QqsQeXTCUVeNdCaUwCRaiRrMoTYdfvU=
+  app: under-the-weather
+  skip_cleanup: true
